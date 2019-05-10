@@ -1,0 +1,8 @@
+prefix=/home/eduardo/ws/kobuki/devel
+
+Name: kobuki_joy
+Description: Description of kobuki_joy
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/eduardo/ws/kobuki/devel/lib 
+Requires: 
