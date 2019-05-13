@@ -1,0 +1,8 @@
+prefix=/home/eduardo/ws/kobuki/devel
+
+Name: 1_kobuki_controller
+Description: Description of 1_kobuki_controller
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/eduardo/ws/kobuki/devel/lib 
+Requires: 

@@ -150,13 +150,6 @@
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_auto_docking/CMakeFiles/kobuki_auto_docking_ros.dir
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_auto_docking/CMakeFiles/bond_generate_messages_nodejs.dir
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_auto_docking/CMakeFiles/kobuki_auto_docking_nodelet.dir
-/home/eduardo/ws/kobuki/build/kobuki_joy/CMakeFiles/list_install_components.dir
-/home/eduardo/ws/kobuki/build/kobuki_joy/CMakeFiles/install.dir
-/home/eduardo/ws/kobuki/build/kobuki_joy/CMakeFiles/rebuild_cache.dir
-/home/eduardo/ws/kobuki/build/kobuki_joy/CMakeFiles/install/strip.dir
-/home/eduardo/ws/kobuki/build/kobuki_joy/CMakeFiles/install/local.dir
-/home/eduardo/ws/kobuki/build/kobuki_joy/CMakeFiles/test.dir
-/home/eduardo/ws/kobuki/build/kobuki_joy/CMakeFiles/edit_cache.dir
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_bumper2pc/CMakeFiles/install.dir
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_bumper2pc/CMakeFiles/rebuild_cache.dir
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_bumper2pc/CMakeFiles/sensor_msgs_generate_messages_eus.dir
@@ -229,6 +222,13 @@
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_controller_tutorial/CMakeFiles/install/local.dir
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_controller_tutorial/CMakeFiles/bump_blink_controller_nodelet.dir
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_controller_tutorial/CMakeFiles/test.dir
+/home/eduardo/ws/kobuki/build/kobuki_joy/CMakeFiles/list_install_components.dir
+/home/eduardo/ws/kobuki/build/kobuki_joy/CMakeFiles/install.dir
+/home/eduardo/ws/kobuki/build/kobuki_joy/CMakeFiles/rebuild_cache.dir
+/home/eduardo/ws/kobuki/build/kobuki_joy/CMakeFiles/install/strip.dir
+/home/eduardo/ws/kobuki/build/kobuki_joy/CMakeFiles/install/local.dir
+/home/eduardo/ws/kobuki/build/kobuki_joy/CMakeFiles/test.dir
+/home/eduardo/ws/kobuki/build/kobuki_joy/CMakeFiles/edit_cache.dir
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_random_walker/CMakeFiles/rebuild_cache.dir
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_random_walker/CMakeFiles/edit_cache.dir
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_random_walker/CMakeFiles/list_install_components.dir

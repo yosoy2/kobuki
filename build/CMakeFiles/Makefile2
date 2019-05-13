@@ -2592,24 +2592,6 @@ clean: kobuki/kobuki_auto_docking/CMakeFiles/kobuki_auto_docking_nodelet.dir/cle
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory kobuki_joy
-
-# Convenience name for "all" pass in the directory.
-kobuki_joy/all:
-
-.PHONY : kobuki_joy/all
-
-# Convenience name for "clean" pass in the directory.
-kobuki_joy/clean:
-
-.PHONY : kobuki_joy/clean
-
-# Convenience name for "preinstall" pass in the directory.
-kobuki_joy/preinstall:
-
-.PHONY : kobuki_joy/preinstall
-
-#=============================================================================
 # Directory level rules for directory kobuki/kobuki_bumper2pc
 
 # Convenience name for "all" pass in the directory.
@@ -4101,6 +4083,24 @@ kobuki/kobuki_controller_tutorial/CMakeFiles/bump_blink_controller_nodelet.dir/c
 clean: kobuki/kobuki_controller_tutorial/CMakeFiles/bump_blink_controller_nodelet.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory kobuki_joy
+
+# Convenience name for "all" pass in the directory.
+kobuki_joy/all:
+
+.PHONY : kobuki_joy/all
+
+# Convenience name for "clean" pass in the directory.
+kobuki_joy/clean:
+
+.PHONY : kobuki_joy/clean
+
+# Convenience name for "preinstall" pass in the directory.
+kobuki_joy/preinstall:
+
+.PHONY : kobuki_joy/preinstall
 
 #=============================================================================
 # Directory level rules for directory kobuki/kobuki_random_walker
