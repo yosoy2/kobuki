@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import rospy
-from kobuki_msgs.msg import *
+from kobuki_msgs.msg import MotorPower
 from sensor_msgs.msg import Joy
 from geometry_msgs.msg import Twist
 
