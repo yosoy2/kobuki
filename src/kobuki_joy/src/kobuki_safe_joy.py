@@ -13,7 +13,7 @@ class Kobuki_safe_controller:
         self.subscriber_joy=rospy.Subscriber("/joy", Joy, self.joy_callback)
         self.Subscriber_bumper=rospy.Subscriber("/mobile_base/events/bumper", BumperEvent, self.bumper_callback)
         #self.bumper=BumperEvent()
-        self.stop=0
+        self.stop=0   #no hay choques, si fuese 1, se acticvaron los bumpers
         self.power=MotorPower()
         self.twist=Twist()
 
@@ -31,25 +31,35 @@ class Kobuki_safe_controller:
         else:
             print("choque")
             self.power.state=1
-            self.twist.linear.x=-0
+            self.twist.linear.x=-0.5
             self.twist.angular.z=0
-            #rospy.sleep(3)
             self.publisher_motor.publish(self.power)
             self.publisher_wheels.publish(self.twist)
-            #$self.stop=0
+            if self.stop==0:
+                print("no he chocado")
+                self.twist.linear.x=velocity
+                self.twist.angular.z=angular
+                self.publisher_motor.publish(self.power)
+                self.publisher_wheels.publish(self.twist)
+            else:
+                print("choque")
+                self.twist.linear.x=velocity
+                self.twist.angular.z=angular
+                self.publisher_motor.publish(self.power)
+                self.publisher_wheels.publish(self.twist)
+
+        '''    self.publisher_motor.publish(self.power)
+            self.publisher_wheels.publish(self.twist)
+            self.power.state=0
+            self.twist.linear.x=0
+            self.twist.angular.z=0
+            self.publisher_motor.publish(self.power)
+            self.publisher_wheels.publish(self.twist)
+            self.stop=1'''
 
     def bumper_callback(self, msg):
-        if msg.bumper == 1:
-            if msg.state ==1:
-                self.stop=1
-
-        if msg.bumper == 2:
-            if msg.state ==1:
-                self.stop=1
-
-        if msg.bumper == 0:
-            if msg.state ==1:
-                self.stop=1
+        if msg.state==1:
+            self.stop=1
 
 def main():
     rospy.init_node('Kobuki_safe_controller') #creacion y registro del nodo!
