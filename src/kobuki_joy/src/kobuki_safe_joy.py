@@ -21,7 +21,7 @@ class Kobuki_safe_controller:
         velocity=msg.axes[1]*0.5
         angular=msg.axes[0]
         if self.stop==0:
-            print("no he chocado")
+            #print("no he chocado")
             self.power.state=1
             self.twist.linear.x=velocity
             self.twist.angular.z=angular

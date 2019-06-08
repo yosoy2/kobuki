@@ -94,6 +94,54 @@
       </sensor>
     </gazebo>
 
+    <!-- camra de profunidad-->
+
+    <gazebo reference="camara_profundidad">
+      <sensor type="depth" name="xbox_kinetic">
+        <always_on>1</always_on>
+        <visualize>true</visualize>
+        <camera>
+            <horizontal_fov>1.047</horizontal_fov>
+            <image>
+              <width>640</width>
+              <height>480</height>
+              <format>R8G8B8</format>
+            </image>
+            <depth_camera>
+            </depth_camera>
+            <clip>
+                <near>0.3</near>
+                <far>2</far>
+            </clip>
+        </camera>
+            <plugin name="kinect_camera_controller" filename="libgazebo_ros_openni_kinect.so">
+            <alwaysOn>true</alwaysOn>
+                <updateRate>500.0</updateRate>
+                <cameraName>xbox_kinetic</cameraName>
+                <frameName>camara_profundidad_optical</frameName>
+            <imageTopicName>rgb/image_raw</imageTopicName>
+            <depthImageTopicName>depth/image_raw</depthImageTopicName>
+            <pointCloudTopicName>depth/points</pointCloudTopicName>
+            <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+            <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+            <pointCloudCutoff>0.4</pointCloudCutoff>
+                <hackBaseline>0.07</hackBaseline>
+                <distortionK1>0.0</distortionK1>
+                <distortionK2>0.0</distortionK2>
+                <distortionK3>0.0</distortionK3>
+                <distortionT1>0.0</distortionT1>
+                <distortionT2>0.0</distortionT2>
+            <CxPrime>0.0</CxPrime>
+            <Cx>0.0</Cx>
+            <Cy>0.0</Cy>
+            <focalLength>0.0</focalLength>
+          </plugin>
+   </sensor>
+ </gazebo>
+
+
+
+
 	  <gazebo reference="cliff_sensor_left_link">
 	    <sensor type="ray" name="cliff_sensor_left">
 	      <always_on>true</always_on>
