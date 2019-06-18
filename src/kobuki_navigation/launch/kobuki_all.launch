@@ -1,0 +1,8 @@
+<launch>
+
+  <node name="joy_node" pkg="joy" type="joy_node.cpp" />
+  <node name="kobuki_safe_joy" pkg="kobuki_joy" type="kobuki_safe_joy.py" output="screen" />
+  <include file="/home/eduardo/ws/kobuki/src/kobuki_desktop/kobuki_gazebo/launch/kobuki_empty_world.launch" />
+  <include file="/home/eduardo/ws/kobuki/src/kobuki_desktop/kobuki_rviz_launchers/launch/view_robot.launch" />
+
+</launch>

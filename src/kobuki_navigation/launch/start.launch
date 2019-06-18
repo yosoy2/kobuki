@@ -1,9 +1,10 @@
+
 <launch>
-    <node pkg="depthimage_to_laserscan" type="depthimage_to_laserscan" name="depthimage_to_laserscan">
-      <remap from="/depthimage_to_laserscan/parameter_descriptions" to="/xbox_kinetic/depth/points"/>
-      <remap from="/depthimage_to_laserscan/parameter_updates" to="/xbox_kinetic/scan"/>
+    <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan_node" output="screen" >
+      <remap from="cloud_in" to="/xbox_kinetic/depth/points"/>
+      <remap from="scan" to="/xbox_kinetic/scan" />
       <rosparam>
-        target_frame: camara_profundidad_optical
+        target_frame: camara_profundidad
         transform_tolerance: 0.01
         min_height: 0.0
         max_height: 1.0
