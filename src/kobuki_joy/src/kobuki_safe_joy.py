@@ -29,20 +29,20 @@ class Kobuki_safe_controller:
             self.publisher_wheels.publish(self.twist)
 
         else:
-            print("choque")
+            #print("choque")
             self.power.state=1
             self.twist.linear.x=-0.5
             self.twist.angular.z=0
             self.publisher_motor.publish(self.power)
             self.publisher_wheels.publish(self.twist)
             if self.stop==0:
-                print("no he chocado")
+                #print("no he chocado")
                 self.twist.linear.x=velocity
                 self.twist.angular.z=angular
                 self.publisher_motor.publish(self.power)
                 self.publisher_wheels.publish(self.twist)
             else:
-                print("choque")
+                #print("choque")
                 self.twist.linear.x=velocity
                 self.twist.angular.z=angular
                 self.publisher_motor.publish(self.power)

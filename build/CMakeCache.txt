@@ -1015,6 +1015,12 @@ kobuki_testsuite_DIR:PATH=/home/eduardo/ws/kobuki/devel/share/kobuki_testsuite/c
 //Value Computed by CMake
 kobuki_testsuite_SOURCE_DIR:STATIC=/home/eduardo/ws/kobuki/src/kobuki/kobuki_testsuite
 
+//Value Computed by CMake
+kobuki_tf_BINARY_DIR:STATIC=/home/eduardo/ws/kobuki/build/kobuki_tf
+
+//Value Computed by CMake
+kobuki_tf_SOURCE_DIR:STATIC=/home/eduardo/ws/kobuki/src/kobuki_tf
+
 //The directory containing a CMake configuration file for laser_geometry.
 laser_geometry_DIR:PATH=/opt/ros/kinetic/share/laser_geometry/cmake
 
@@ -1303,7 +1309,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=29
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=30
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

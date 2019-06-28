@@ -56,16 +56,6 @@ CMAKE_BINARY_DIR = /home/eduardo/ws/kobuki/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -89,27 +79,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target test
+test/fast: test
 
-.PHONY : edit_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
+.PHONY : test/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -122,16 +101,37 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : test/fast
+.PHONY : edit_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,49 +166,49 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
-.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/rule:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/rule
+.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/rule
 
 # Convenience name for target.
-gazebo_msgs_generate_messages_lisp: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+gazebo_plugins_gencfg: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/rule
 
-.PHONY : gazebo_msgs_generate_messages_lisp
+.PHONY : gazebo_plugins_gencfg
 
 # fast build rule for target.
-gazebo_msgs_generate_messages_lisp/fast:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build
-.PHONY : gazebo_msgs_generate_messages_lisp/fast
+gazebo_plugins_gencfg/fast:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/build
+.PHONY : gazebo_plugins_gencfg/fast
 
 # Convenience name for target.
-kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_kobuki.dir/rule:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_kobuki.dir/rule
-.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_kobuki.dir/rule
+kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
+.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
 
 # Convenience name for target.
-gazebo_ros_kobuki: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_kobuki.dir/rule
+trajectory_msgs_generate_messages_py: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
 
-.PHONY : gazebo_ros_kobuki
+.PHONY : trajectory_msgs_generate_messages_py
 
 # fast build rule for target.
-gazebo_ros_kobuki/fast:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_kobuki.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_kobuki.dir/build
-.PHONY : gazebo_ros_kobuki/fast
+trajectory_msgs_generate_messages_py/fast:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
+.PHONY : trajectory_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
-.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-gazebo_msgs_generate_messages_py: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+trajectory_msgs_generate_messages_lisp: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : gazebo_msgs_generate_messages_py
+.PHONY : trajectory_msgs_generate_messages_lisp
 
 # fast build rule for target.
-gazebo_msgs_generate_messages_py/fast:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
-.PHONY : gazebo_msgs_generate_messages_py/fast
+trajectory_msgs_generate_messages_lisp/fast:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
+.PHONY : trajectory_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule:
@@ -241,51 +241,6 @@ gazebo_msgs_generate_messages_cpp/fast:
 .PHONY : gazebo_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
-.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-gazebo_msgs_generate_messages_nodejs: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : gazebo_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-gazebo_msgs_generate_messages_nodejs/fast:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build
-.PHONY : gazebo_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_cpp.dir/rule:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_cpp.dir/rule
-.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_cpp: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-.PHONY : tf_generate_messages_cpp
-
-# fast build rule for target.
-tf_generate_messages_cpp/fast:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_cpp.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
-
-# Convenience name for target.
-kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_nodejs.dir/rule:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_nodejs: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-
-.PHONY : tf_generate_messages_nodejs
-
-# fast build rule for target.
-tf_generate_messages_nodejs/fast:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_nodejs.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_nodejs.dir/build
-.PHONY : tf_generate_messages_nodejs/fast
-
-# Convenience name for target.
 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_gencfg.dir/rule:
 	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_gencfg.dir/rule
 .PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_gencfg.dir/rule
@@ -301,64 +256,19 @@ gazebo_ros_gencfg/fast:
 .PHONY : gazebo_ros_gencfg/fast
 
 # Convenience name for target.
-kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_eus.dir/rule:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_eus.dir/rule
-.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_eus.dir/rule
+kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
+.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-tf_generate_messages_eus: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_eus.dir/rule
+gazebo_msgs_generate_messages_nodejs: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : tf_generate_messages_eus
+.PHONY : gazebo_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-tf_generate_messages_eus/fast:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_eus.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_eus.dir/build
-.PHONY : tf_generate_messages_eus/fast
-
-# Convenience name for target.
-kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_lisp.dir/rule:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_lisp.dir/rule
-.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_lisp: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-.PHONY : tf_generate_messages_lisp
-
-# fast build rule for target.
-tf_generate_messages_lisp/fast:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_lisp.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_lisp.dir/build
-.PHONY : tf_generate_messages_lisp/fast
-
-# Convenience name for target.
-kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_py.dir/rule:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_py.dir/rule
-.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_py: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_py.dir/rule
-
-.PHONY : tf_generate_messages_py
-
-# fast build rule for target.
-tf_generate_messages_py/fast:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_py.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/tf_generate_messages_py.dir/build
-.PHONY : tf_generate_messages_py/fast
-
-# Convenience name for target.
-kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_cpp: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_cpp
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_cpp/fast:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
-.PHONY : trajectory_msgs_generate_messages_cpp/fast
+gazebo_msgs_generate_messages_nodejs/fast:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build
+.PHONY : gazebo_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
@@ -376,19 +286,64 @@ trajectory_msgs_generate_messages_eus/fast:
 .PHONY : trajectory_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_kobuki.dir/rule:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_kobuki.dir/rule
+.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_kobuki.dir/rule
 
 # Convenience name for target.
-trajectory_msgs_generate_messages_lisp: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+gazebo_ros_kobuki: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_kobuki.dir/rule
 
-.PHONY : trajectory_msgs_generate_messages_lisp
+.PHONY : gazebo_ros_kobuki
 
 # fast build rule for target.
-trajectory_msgs_generate_messages_lisp/fast:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
-.PHONY : trajectory_msgs_generate_messages_lisp/fast
+gazebo_ros_kobuki/fast:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_kobuki.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_ros_kobuki.dir/build
+.PHONY : gazebo_ros_kobuki/fast
+
+# Convenience name for target.
+kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+gazebo_msgs_generate_messages_lisp: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : gazebo_msgs_generate_messages_lisp
+
+# fast build rule for target.
+gazebo_msgs_generate_messages_lisp/fast:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build
+.PHONY : gazebo_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+gazebo_msgs_generate_messages_py: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+
+.PHONY : gazebo_msgs_generate_messages_py
+
+# fast build rule for target.
+gazebo_msgs_generate_messages_py/fast:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
+.PHONY : gazebo_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_cpp: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_cpp
+
+# fast build rule for target.
+trajectory_msgs_generate_messages_cpp/fast:
+	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
+.PHONY : trajectory_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
@@ -404,36 +359,6 @@ trajectory_msgs_generate_messages_nodejs: kobuki_desktop/kobuki_gazebo_plugins/C
 trajectory_msgs_generate_messages_nodejs/fast:
 	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
 .PHONY : trajectory_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_py: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_py
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_py/fast:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
-.PHONY : trajectory_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/rule:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f CMakeFiles/Makefile2 kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/rule
-.PHONY : kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/rule
-
-# Convenience name for target.
-gazebo_plugins_gencfg: kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/rule
-
-.PHONY : gazebo_plugins_gencfg
-
-# fast build rule for target.
-gazebo_plugins_gencfg/fast:
-	cd /home/eduardo/ws/kobuki/build && $(MAKE) -f kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/build.make kobuki_desktop/kobuki_gazebo_plugins/CMakeFiles/gazebo_plugins_gencfg.dir/build
-.PHONY : gazebo_plugins_gencfg/fast
 
 src/gazebo_ros_kobuki.o: src/gazebo_ros_kobuki.cpp.o
 
@@ -522,31 +447,26 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... gazebo_msgs_generate_messages_lisp"
-	@echo "... gazebo_ros_kobuki"
-	@echo "... gazebo_msgs_generate_messages_py"
+	@echo "... test"
+	@echo "... install/local"
+	@echo "... gazebo_plugins_gencfg"
+	@echo "... trajectory_msgs_generate_messages_py"
+	@echo "... trajectory_msgs_generate_messages_lisp"
+	@echo "... edit_cache"
 	@echo "... gazebo_msgs_generate_messages_eus"
 	@echo "... gazebo_msgs_generate_messages_cpp"
-	@echo "... gazebo_msgs_generate_messages_nodejs"
-	@echo "... tf_generate_messages_cpp"
-	@echo "... tf_generate_messages_nodejs"
 	@echo "... gazebo_ros_gencfg"
-	@echo "... tf_generate_messages_eus"
-	@echo "... edit_cache"
-	@echo "... tf_generate_messages_lisp"
-	@echo "... tf_generate_messages_py"
-	@echo "... trajectory_msgs_generate_messages_cpp"
+	@echo "... gazebo_msgs_generate_messages_nodejs"
 	@echo "... trajectory_msgs_generate_messages_eus"
-	@echo "... trajectory_msgs_generate_messages_lisp"
-	@echo "... trajectory_msgs_generate_messages_nodejs"
+	@echo "... gazebo_ros_kobuki"
+	@echo "... gazebo_msgs_generate_messages_lisp"
+	@echo "... gazebo_msgs_generate_messages_py"
+	@echo "... trajectory_msgs_generate_messages_cpp"
+	@echo "... list_install_components"
 	@echo "... install/strip"
-	@echo "... trajectory_msgs_generate_messages_py"
-	@echo "... gazebo_plugins_gencfg"
-	@echo "... install/local"
-	@echo "... test"
+	@echo "... trajectory_msgs_generate_messages_nodejs"
 	@echo "... src/gazebo_ros_kobuki.o"
 	@echo "... src/gazebo_ros_kobuki.i"
 	@echo "... src/gazebo_ros_kobuki.s"
