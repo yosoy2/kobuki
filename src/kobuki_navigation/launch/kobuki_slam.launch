@@ -1,0 +1,17 @@
+<launch>
+  <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping">
+    <remap from="/scan" to ="/xbox_kinetic/scan"/>
+    <rosparam>
+      maxUrange: 2.0
+      base_frame: base_link
+      map_update_interval: 3.0
+      minimumScore: 220
+      linearUpdate: 0.15
+      xmin: -7
+      ymin: -7
+      xmax: 7
+      ymax: 7
+      maxRange: 2.4
+    </rosparam>
+  </node>
+</launch>
