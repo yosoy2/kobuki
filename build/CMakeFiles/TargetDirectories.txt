@@ -71,6 +71,13 @@
 /home/eduardo/ws/kobuki/build/kobuki_desktop/kobuki_rviz_launchers/CMakeFiles/install/local.dir
 /home/eduardo/ws/kobuki/build/kobuki_desktop/kobuki_rviz_launchers/CMakeFiles/test.dir
 /home/eduardo/ws/kobuki/build/kobuki_desktop/kobuki_rviz_launchers/CMakeFiles/edit_cache.dir
+/home/eduardo/ws/kobuki/build/provide_map/CMakeFiles/list_install_components.dir
+/home/eduardo/ws/kobuki/build/provide_map/CMakeFiles/install.dir
+/home/eduardo/ws/kobuki/build/provide_map/CMakeFiles/rebuild_cache.dir
+/home/eduardo/ws/kobuki/build/provide_map/CMakeFiles/install/strip.dir
+/home/eduardo/ws/kobuki/build/provide_map/CMakeFiles/install/local.dir
+/home/eduardo/ws/kobuki/build/provide_map/CMakeFiles/test.dir
+/home/eduardo/ws/kobuki/build/provide_map/CMakeFiles/edit_cache.dir
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_keyop/CMakeFiles/list_install_components.dir
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_keyop/CMakeFiles/install.dir
 /home/eduardo/ws/kobuki/build/kobuki/kobuki_keyop/CMakeFiles/test.dir

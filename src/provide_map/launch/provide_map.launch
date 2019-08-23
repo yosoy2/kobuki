@@ -1,0 +1,8 @@
+<launch>
+
+  <arg name="map_file" value="/home/eduardo/ws/kobuki/src/kobuki_navigation/maped_maps/corral_2.yaml">
+  </arg>
+  <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)">
+  </node>
+
+</launch>

@@ -528,6 +528,24 @@ kobuki_desktop/kobuki_rviz_launchers/preinstall:
 .PHONY : kobuki_desktop/kobuki_rviz_launchers/preinstall
 
 #=============================================================================
+# Directory level rules for directory provide_map
+
+# Convenience name for "all" pass in the directory.
+provide_map/all:
+
+.PHONY : provide_map/all
+
+# Convenience name for "clean" pass in the directory.
+provide_map/clean:
+
+.PHONY : provide_map/clean
+
+# Convenience name for "preinstall" pass in the directory.
+provide_map/preinstall:
+
+.PHONY : provide_map/preinstall
+
+#=============================================================================
 # Directory level rules for directory kobuki/kobuki_keyop
 
 # Convenience name for "all" pass in the directory.
